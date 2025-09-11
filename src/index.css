@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   line-height: 1.1;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
@@ -153,6 +153,7 @@ a:hover::after {
   transform: translateY(-2px);
   box-shadow: var(--shadow-large);
   background: var(--gradient-cta);
+  color: var(--pure-white);
 }
 
 /* Navigation */
@@ -383,6 +384,7 @@ nav button:hover {
   text-align: center;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .hero::before {
@@ -400,6 +402,8 @@ nav button:hover {
   position: relative;
   z-index: 2;
 }
+
+/* удалили сложную сетку hero, оставляем центрирование */
 
 .hero h1 {
   color: var(--pure-white);
@@ -424,16 +428,19 @@ nav button:hover {
   flex-wrap: wrap;
 }
 
+/* Десктоп: кнопки в строку */
+.hero-actions .btn { flex: 0 0 auto; }
+
 .btn-secondary {
   background: transparent;
   color: var(--pure-white);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(191, 230, 255, 0.45);
   backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--electric-blue-light);
+  background: linear-gradient(135deg, rgba(191, 230, 255, 0.15), rgba(73, 185, 255, 0.2));
+  border-color: var(--electric-blue);
   color: var(--electric-blue-light);
 }
 
@@ -737,6 +744,11 @@ nav button:hover {
   .hero-actions {
     flex-direction: column;
     align-items: center;
+  }
+
+  /* Планшеты/мобилки: обычные кнопки, центрируются */
+  .hero-actions .btn {
+    width: auto;
   }
 
   .hero-stats {

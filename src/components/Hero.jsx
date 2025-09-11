@@ -74,14 +74,14 @@ const Hero = () => {
           variants={itemVariants}
           className="hero-title"
         >
-          Функциональные и конверсионные MVP быстро и чётко
+          Функциональные и конверсионные MVP быстро и чётко под вашу задачу — на вайб-кодинге.
         </motion.h1>
         
         <motion.p 
           variants={itemVariants}
           className="hero-subtitle"
         >
-          Под вашу задачу — на вайб-кодинге. Чат-боты, ИИ-ассистенты, системы аналитики и другие решения за считанные часы.
+          Чат-боты, ИИ-ассистенты, системы аналитики<br/>и другие решения за 1-3 дня.
         </motion.p>
         
         <motion.div
@@ -93,7 +93,7 @@ const Hero = () => {
             className="btn btn-primary"
             whileHover={{ 
               scale: 1.05,
-              boxShadow: "0 20px 40px rgba(99, 102, 241, 0.3)"
+              boxShadow: "0 20px 40px rgba(73, 185, 255, 0.35)"
             }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300 }}
@@ -112,7 +112,7 @@ const Hero = () => {
           </motion.a>
         </motion.div>
 
-        {/* Stats section */}
+        {/* Stats section (под hero как было) */}
         <motion.div
           variants={itemVariants}
           className="hero-stats"
