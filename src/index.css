@@ -230,7 +230,7 @@ nav button:hover {
 }
 
 .feature-card {
-  padding: 2.5rem;
+  padding: 1.6rem;
   background: var(--pure-white);
   box-shadow: var(--shadow-soft);
   border: 1px solid rgba(0, 194, 199, 0.15);
@@ -250,14 +250,14 @@ nav button:hover {
 }
 
 .feature-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-large);
   border-color: var(--electric-blue);
 }
 
 .feature-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
   display: block;
   text-align: center;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
@@ -277,9 +277,21 @@ nav button:hover {
   transform: scaleX(1);
 }
 
+/* Компактные заголовки/тексты в Why Vibe Coding */
+.feature-card h3 {
+  line-height: 1.25;
+  margin-bottom: 0.3rem;
+  font-size: 1.4rem; /* match hero subtitle */
+}
+
+.feature-card p {
+  line-height: 1.55;
+  margin: 0;
+}
+
 .section-title {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   position: relative;
 }
 
@@ -478,9 +490,9 @@ nav button:hover {
 /* Grid layouts */
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2.5rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.6rem;
+  margin-top: 2rem;
 }
 
 .about, .contacts {
@@ -762,6 +774,11 @@ nav button:hover {
 
   .skills-grid {
     gap: 0.8rem;
+  }
+
+  /* Why Vibe Coding: ещё компактнее заголовки на мобилках */
+  .feature-card h3 {
+    font-size: 1.2rem; /* match hero subtitle on mobile */
   }
 
   .footer-content {
