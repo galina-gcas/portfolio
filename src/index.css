@@ -497,7 +497,7 @@ nav button:hover {
 
 .about, .contacts {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr; /* левый текст, справа фото */
   gap: 4rem;
   align-items: start;
 }
@@ -588,6 +588,10 @@ nav button:hover {
   overflow: hidden;
 }
 
+.education-card.compact {
+  padding: 1.5rem;
+}
+
 .education-card::before {
   content: '';
   position: absolute;
@@ -596,6 +600,23 @@ nav button:hover {
   width: 4px;
   height: 100%;
   background: var(--gradient-secondary);
+}
+
+.about-photo .photo-card {
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: var(--shadow-soft);
+  border: 3px solid var(--electric-blue);
+  background: var(--pure-white);
+  max-width: 80%;
+}
+
+.about-photo { justify-self: end; }
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .education-icon {
@@ -744,8 +765,12 @@ nav button:hover {
   }
 
   .about, .contacts {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* фото сверху, текст снизу */
     gap: 2rem;
+  }
+
+  .about-photo .photo-card {
+    max-width: 100%;
   }
 
   .features, .projects-grid {

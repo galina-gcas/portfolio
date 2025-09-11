@@ -49,6 +49,7 @@ const About = () => {
           </motion.h2>
           
           <div className="about">
+            {/* Левая колонка: текст */}
             <motion.div
               className="about-content"
               variants={itemVariants}
@@ -58,48 +59,15 @@ const About = () => {
                 <p>Моя экспертиза — в быстрой разработке MVP, интеграции ИИ и автоматизации рутинных задач с помощью современных инструментов, включая вайб-кодинг и автономные агенты.</p>
                 <p>Открыта к обсуждению ваших проектов и сотрудничеству под различные задачи в широком спектре ниш — от финтеха до e-commerce и недвижимости.</p>
               </div>
-              
-              <div className="skills-section">
-                <h4>Мои навыки</h4>
-                <div className="skills-grid">
-                  {skills.map((skill, index) => (
-                    <motion.div
-                      key={index}
-                      className="skill-item"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: index * 0.1, duration: 0.5 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="skill-header">
-                        <span className="skill-name">{skill.name}</span>
-                        <span className="skill-percentage">{skill.level}%</span>
-                      </div>
-                      <div className="skill-bar">
-                        <motion.div
-                          className="skill-progress"
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          transition={{ delay: index * 0.1 + 0.5, duration: 1, ease: "easeOut" }}
-                          viewport={{ once: true }}
-                        />
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
             </motion.div>
             
+            {/* Правая колонка: фото */}
             <motion.div
-              className="about-education"
+              className="about-photo"
               variants={itemVariants}
             >
-              <div className="education-card">
-                <div className="education-icon">🎓</div>
-                <h3>Обучение</h3>
-                <p>Планируя работу с российским сегментом бизнеса, я целенаправленно инвестировала в обучение российским нейросетям и инструментам на курсе Университета Zerocoder: <strong>«Нейросети без границ: с российскими инструментами»</strong>.</p>
-                <p>Сертификат: <a href="#" target="_blank" rel="noopener noreferrer">Посмотреть сертификат</a></p>
-                <p>Сейчас прохожу мини-курс по <strong>вайб-кодингу и автономным агентам</strong>. Некоторые учебные проекты уже реализованы и доступны ниже.</p>
+              <div className="photo-card">
+                <img src={`${import.meta.env.BASE_URL}images/profile.jpg`} alt="Galina GCAS" />
               </div>
             </motion.div>
           </div>
