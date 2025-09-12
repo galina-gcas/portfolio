@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import WhyVibeCoding from './components/WhyVibeCoding.jsx';
@@ -9,11 +10,13 @@ import CaseStudy from './components/CaseStudy.jsx';
 import Education from './components/Education.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
+import ScrollToAnchor from './components/ScrollToAnchor.jsx';
+import CaseStudyPage from './pages/CaseStudyPage.jsx';
 
-function App() {
+function HomePage() {
   return (
-    <div className="App">
-      <Header />
+    <>
       <Hero />
       <WhyVibeCoding />
       <About />
@@ -22,8 +25,24 @@ function App() {
       <Projects />
       <CaseStudy />
       <Contact />
-      <Footer />
-    </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <ScrollToTop />
+      <ScrollToAnchor />
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/case-study/financial-calculator" element={<CaseStudyPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
