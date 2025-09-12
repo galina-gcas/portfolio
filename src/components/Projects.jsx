@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
   const projects = [
@@ -71,8 +72,39 @@ const Projects = () => {
             className="project-intro"
           >
             <div className="intro-card">
-              <div className="intro-icon">💡</div>
-              <p>Для себя я создала проект <strong>"Финансовый помощник"</strong>, который активно совершенствую, добавляя новый функционал — от анализа расходов до прогнозирования бюджета с помощью ИИ.</p>
+              <div className="intro-icon">🤖</div>
+              <p>Для своего бизнеса я создала <strong>Telegram-бот для климатических новостей</strong>, который активно использую для поиска актуальной информации и создания контента для социальных сетей.</p>
+            </div>
+          </motion.div>
+
+          {/* Мой проект - выделенный блок */}
+          <motion.div
+            variants={cardVariants}
+            className="my-project-section"
+          >
+            <div className="my-project-card">
+              <div className="my-project-image-container">
+                <img src="https://via.placeholder.com/400x200/10b981/ffffff?text=Telegram+Bot" alt="Telegram-бот для климатических новостей" />
+                <div className="my-project-category">Мой проект</div>
+              </div>
+              <div className="my-project-content">
+                <h3>Telegram-бот для климатических новостей</h3>
+                <p>ИИ-бот, который ищет новости о климатических изменениях, стихийных бедствиях и катастрофах, помогает писать посты для Threads на основе этих новостей.</p>
+                <div className="my-project-technologies">
+                  <span className="tech-tag">Python</span>
+                  <span className="tech-tag">Telegram API</span>
+                  <span className="tech-tag">OpenAI</span>
+                  <span className="tech-tag">News API</span>
+                </div>
+                <div className="my-project-actions">
+                  <Link to="/project/telegram-bot" className="btn-small">
+                    Подробнее
+                  </Link>
+                  <a href="https://t.me/climate_news_bot" className="btn-small btn-outline" target="_blank" rel="noopener noreferrer">
+                    Попробовать бота
+                  </a>
+                </div>
+              </div>
             </div>
           </motion.div>
           
