@@ -72,12 +72,6 @@ const WhyVibeCoding = () => {
                 key={index}
                 className="feature-card"
                 variants={cardVariants}
-                whileHover={{ 
-                  y: -10,
-                  scale: 1.02,
-                  transition: { type: "spring", stiffness: 300 }
-                }}
-                whileTap={{ scale: 0.98 }}
               >
                 <div className="feature-icon" style={{ color: feature.color }}>
                   {feature.icon}

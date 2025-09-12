@@ -126,12 +126,6 @@ const Projects = () => {
                 key={index}
                 className="project-card"
                 variants={cardVariants}
-                whileHover={{ 
-                  y: -10,
-                  scale: 1.02,
-                  transition: { type: "spring", stiffness: 300 }
-                }}
-                whileTap={{ scale: 0.98 }}
               >
                 <div className="project-icon-container">
                   <div className="project-icon">{project.icon}</div>
