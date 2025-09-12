@@ -11,6 +11,7 @@ import Education from './components/Education.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
+import ScrollToTopButton from './components/ScrollToTopButton.jsx';
 import ScrollToAnchor from './components/ScrollToAnchor.jsx';
 import CaseStudyPage from './pages/CaseStudyPage.jsx';
 import RecipeBotCasePage from './pages/RecipeBotCasePage.jsx';
@@ -50,6 +51,7 @@ function App() {
           <Route path="/project/mvp-app" element={<MVPAppProjectPage />} />
         </Routes>
         <Footer />
+        <ScrollToTopButton />
       </div>
     </Router>
   );
