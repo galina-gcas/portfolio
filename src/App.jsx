@@ -13,6 +13,7 @@ import Footer from './components/Footer.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import ScrollToAnchor from './components/ScrollToAnchor.jsx';
 import CaseStudyPage from './pages/CaseStudyPage.jsx';
+import TelegramBotProjectPage from './pages/TelegramBotProjectPage.jsx';
 
 function HomePage() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/case-study/financial-calculator" element={<CaseStudyPage />} />
+          <Route path="/project/telegram-bot" element={<TelegramBotProjectPage />} />
         </Routes>
         <Footer />
       </div>
