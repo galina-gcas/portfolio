@@ -17,28 +17,24 @@ const TelegramBotProjectPage = () => {
 
   const features = [
     'Автоматический поиск новостей о климатических изменениях и стихийных бедствиях',
-    'Анализ и фильтрация новостей по релевантности и достоверности',
-    'Генерация постов для Threads на основе найденных новостей',
-    'Настройка ключевых слов и источников новостей',
-    'Уведомления о важных событиях в реальном времени',
-    'Интеграция с различными новостными API'
+    'Генерация постов для Threads на основе найденных новостей'
   ];
 
   const screenshots = [
     {
       title: 'Главное меню бота',
       description: 'Интуитивно понятный интерфейс с основными функциями',
-      image: 'https://via.placeholder.com/600x400/10b981/ffffff?text=Main+Menu'
+      image: '/images/telegram-bot-main-menu.png'
     },
     {
       title: 'Поиск новостей',
       description: 'Результаты поиска с фильтрацией по дате и источнику',
-      image: 'https://via.placeholder.com/600x400/6366f1/ffffff?text=News+Search'
+      image: '/images/telegram-bot-news-search.png'
     },
     {
       title: 'Генерация постов',
       description: 'Автоматическое создание контента для социальных сетей',
-      image: 'https://via.placeholder.com/600x400/f59e0b/ffffff?text=Post+Generation'
+      image: '/images/telegram-bot-post-generation.png'
     }
   ];
 
@@ -65,8 +61,7 @@ const TelegramBotProjectPage = () => {
             <h1>Telegram-бот для климатических новостей</h1>
             <p className="project-page-subtitle"><strong>ИИ-решение для бизнеса</strong></p>
             <div className="project-page-meta">
-              <span className="status completed">В продакшене</span>
-              <span className="project-page-date">2024</span>
+              <span className="status completed">Работает локально</span>
             </div>
           </motion.div>
 
@@ -98,23 +93,13 @@ const TelegramBotProjectPage = () => {
                   <div className="tech-tags">
                     <span className="tech-tag">Python</span>
                     <span className="tech-tag">Telegram Bot API</span>
-                    <span className="tech-tag">FastAPI</span>
                   </div>
                 </div>
                 <div className="tech-category">
                   <h3>ИИ и обработка данных</h3>
                   <div className="tech-tags">
-                    <span className="tech-tag">OpenAI GPT</span>
-                    <span className="tech-tag">News API</span>
-                    <span className="tech-tag">Web Scraping</span>
-                  </div>
-                </div>
-                <div className="tech-category">
-                  <h3>Инфраструктура</h3>
-                  <div className="tech-tags">
-                    <span className="tech-tag">Docker</span>
-                    <span className="tech-tag">PostgreSQL</span>
-                    <span className="tech-tag">Redis</span>
+                    <span className="tech-tag">Giga Chat API</span>
+                    <span className="tech-tag">Web Search</span>
                   </div>
                 </div>
               </div>
@@ -155,9 +140,6 @@ const TelegramBotProjectPage = () => {
             </div>
 
             <div className="project-page-actions">
-              <a href="https://t.me/climate_news_bot" className="btn" target="_blank" rel="noopener noreferrer">
-                Попробовать бота →
-              </a>
               <a href="/#projects" className="btn btn-secondary">
                 ← Назад к проектам
               </a>

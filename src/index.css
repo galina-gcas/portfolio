@@ -350,47 +350,74 @@ nav button:hover {
   box-shadow: var(--shadow-large);
 }
 
-.project-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover img {
-  transform: scale(1.05);
-}
 
 .project-card .content {
   padding: 2rem;
+}
+
+.project-card .content h3 {
+  font-size: 1.4rem; /* match hero subtitle */
+  margin-bottom: 1rem;
+  line-height: 1.4;
 }
 
 /* Social links */
 .social-links {
   display: flex;
   gap: 1.5rem;
-  margin-top: 1.5rem;
+  justify-content: center;
+  flex: 1;
+  align-items: flex-start;
+  padding-top: -1rem;
+  margin-top: -1rem;
 }
 
 .social-links a {
-  font-size: 1.8rem;
-  color: var(--electric-blue);
-  padding: 0.5rem;
-  border-radius: 12px;
-  background: rgba(0, 194, 199, 0.12);
-  transition: all 0.3s ease;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  padding: 1.5rem 1rem;
+  border-radius: 16px;
+  background: var(--pure-white);
+  border: 2px solid rgba(99, 102, 241, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  min-width: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.social-icon-img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.social-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--electric-blue);
+  text-align: center;
+  transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-  color: var(--pure-white);
-  background: var(--gradient-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+  border-color: var(--electric-blue);
+}
+
+.social-links a:hover .social-icon-img {
+  transform: scale(1.1);
+}
+
+.social-links a:hover .social-label {
+  color: var(--electric-blue);
 }
 
 /* Sections */
@@ -511,9 +538,9 @@ nav button:hover {
 
 .about, .contacts {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr; /* левый текст, справа фото */
-  gap: 4rem;
-  align-items: start;
+  grid-template-columns: 1fr 1fr; /* равные колонки */
+  gap: 3rem;
+  align-items: stretch;
 }
 
 .about h2, .contacts h2 {
@@ -745,6 +772,8 @@ nav button:hover {
   overflow: hidden;
   position: relative;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: row;
 }
 
 .my-project-card:hover {
@@ -766,17 +795,24 @@ nav button:hover {
 .my-project-image-container {
   position: relative;
   overflow: hidden;
+  background: var(--slate-50);
+  border-radius: 0 20px 20px 0;
+  flex: 0 0 40%;
+  min-width: 300px;
+  padding: 35px;
 }
 
 .my-project-image-container img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.3s ease;
+  border-radius: 12px;
 }
 
 .my-project-card:hover .my-project-image-container img {
-  transform: scale(1.05);
+  transform: none;
 }
 
 .my-project-category {
@@ -796,6 +832,10 @@ nav button:hover {
 
 .my-project-content {
   padding: 2.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .my-project-content h3 {
@@ -888,9 +928,21 @@ nav button:hover {
   font-weight: 600;
 }
 
-.project-image-container {
+.project-icon-container {
   position: relative;
   overflow: hidden;
+  background: var(--slate-50);
+  border-radius: 16px 16px 0 0;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+}
+
+.project-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .project-category {
@@ -971,7 +1023,27 @@ nav button:hover {
   .case-studies-grid { grid-template-columns: 1fr; }
   .technologies-grid { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: 1fr; }
-  .case-page-actions { flex-direction: column; align-items: center; }
+  .case-page-actions { 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1rem;
+  }
+  
+  .case-page-actions .btn-small {
+    min-width: 140px;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  
+  .demo-section {
+    margin: 1.5rem 0;
+    padding: 1rem;
+  }
+  
+  .demo-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
   .case-page-header h1 { font-size: 2.2rem; }
   .case-page-content { padding: 2rem; }
   .page-header h1 { font-size: 2.2rem; }
@@ -981,10 +1053,31 @@ nav button:hover {
   .project-page-actions { flex-direction: column; align-items: center; }
   .screenshots-grid { grid-template-columns: 1fr; }
   .results-grid { grid-template-columns: 1fr; }
+  .my-project-card { 
+    flex-direction: column; 
+  }
+  .my-project-image-container { 
+    flex: none; 
+    min-width: auto; 
+    border-radius: 20px 20px 0 0; 
+  }
   .my-project-actions { flex-direction: column; align-items: center; }
   .my-project-content { padding: 2rem; }
   .my-project-content h3 { font-size: 1.5rem; }
   .process-steps { grid-template-columns: 1fr; }
+  
+  .social-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .social-links a {
+    min-width: auto;
+    width: 100%;
+    padding: 1.25rem;
+  }
+  .business-applications { grid-template-columns: 1fr; }
+  .business-app { padding: 1.5rem; }
   .modal { max-width: 95vw; }
   .modal-close { top: 8px; right: 10px; width: 32px; height: 32px; }
   h1 {
@@ -1202,6 +1295,8 @@ nav button:hover {
   position: relative;
   overflow: hidden;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-card::before {
@@ -1224,11 +1319,24 @@ nav button:hover {
   background: var(--gradient-secondary);
 }
 
+.contact-card h3, .social-card h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  color: var(--electric-blue);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.social-card h3 {
+  margin-bottom: 0;
+}
+
 .contact-list {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin-top: 2rem;
+  flex: 1;
 }
 
 .contact-item {
@@ -1516,6 +1624,25 @@ nav button:hover {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.case-study-title-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.case-study-title-link:hover .case-study-title {
+  color: var(--electric-blue);
+  transition: color 0.3s ease;
+}
+
+.case-study-title-link:focus {
+  outline: none;
+}
+
+.case-study-title-link:focus .case-study-title {
+  color: var(--electric-blue);
 }
 
 .case-study-description {
@@ -1847,31 +1974,46 @@ nav button:hover {
 }
 
 .screenshot-item {
-  background: var(--slate-50);
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid rgba(99, 102, 241, 0.1);
+  background: var(--pure-white);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 2px solid rgba(99, 102, 241, 0.1);
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.screenshot-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+  border-color: var(--electric-blue);
 }
 
 .screenshot-item img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  background: var(--slate-50);
+  padding: 1rem;
 }
 
 .screenshot-item h3 {
   color: var(--electric-blue);
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .screenshot-item p {
   margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--slate-700);
 }
 
 .results-grid {
@@ -1921,6 +2063,92 @@ nav button:hover {
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid var(--slate-200);
+}
+
+/* Business Applications */
+.business-applications {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.business-app {
+  background: var(--slate-50);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  transition: all 0.3s ease;
+}
+
+.business-app:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--electric-blue);
+}
+
+.business-app h4 {
+  color: var(--electric-blue);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.app-description {
+  color: var(--slate-700);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.app-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.example-tag {
+  background: var(--gradient-primary);
+  color: var(--pure-white);
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Demo Buttons */
+.demo-section {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1.5rem;
+}
+
+.demo-btn {
+  display: inline-block;
+  background: var(--gradient-primary);
+  color: var(--pure-white);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-small);
+  border: 2px solid transparent;
+}
+
+.demo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background: var(--gradient-secondary);
+  color: var(--pure-white);
+  border-color: #ef4444;
+}
+
+.demo-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+  border-color: var(--electric-blue);
+  color: var(--pure-white);
 }
 
 /* Case Study Page */
@@ -2140,10 +2368,45 @@ nav button:hover {
 .case-page-actions {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid var(--slate-200);
+  flex-wrap: wrap;
+}
+
+.case-page-actions .btn-small {
+  min-width: 160px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.case-page-actions .btn-small:not(.btn-outline) {
+  background: var(--gradient-primary);
+  color: var(--pure-white);
+  border: 2px solid transparent;
+}
+
+.case-page-actions .btn-small:not(.btn-outline):hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.case-page-actions .btn-outline {
+  background: transparent;
+  color: var(--electric-blue);
+  border: 2px solid var(--electric-blue);
+}
+
+.case-page-actions .btn-outline:hover {
+  background: var(--electric-blue);
+  color: var(--pure-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
 }
 
 .btn-secondary {
