@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
   
   const navItems = [
-    { id: 'home', label: 'Главная' },
-    { id: 'why', label: 'Почему вайб-кодинг?' },
-    { id: 'about', label: 'Кто я' },
-    { id: 'education', label: 'Образование' },
-    { id: 'case-studies', label: 'Кейсы' },
-    { id: 'projects', label: 'Проекты' },
-    { id: 'contact', label: 'Контакты' }
+    { id: 'why', label: 'Почему вайб-кодинг?', path: '/#why' },
+    { id: 'about', label: 'Кто я', path: '/#about' },
+    { id: 'education', label: 'Дипломы и сертификаты', path: '/#education' },
+    { id: 'projects', label: 'Проекты', path: '/#projects' },
+    { id: 'contact', label: 'Контакты', path: '/#contact' }
   ];
 
   useEffect(() => {
@@ -24,9 +24,25 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname !== '/') {
+      // Если мы не на главной странице, переходим на главную и затем скроллим
+      window.location.href = `/#${id}`;
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        const headerHeight = 80; // Высота хедера
+        const elementPosition = element.offsetTop - headerHeight;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
+  const handleNavClick = (item) => {
+    if (item.path.startsWith('/#')) {
+      scrollToSection(item.id);
     }
   };
 
@@ -43,7 +59,9 @@ const Header = () => {
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          Galina <span>GCAS</span>
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            Galina GCAS
+          </Link>
         </motion.div>
         <nav>
           <ul>
@@ -56,7 +74,7 @@ const Header = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <button onClick={() => scrollToSection(item.id)}>
+                <button onClick={() => handleNavClick(item)}>
                   {item.label}
                 </button>
               </motion.li>

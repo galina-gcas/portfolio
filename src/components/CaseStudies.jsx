@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const CaseStudies = () => {
   const containerVariants = {
@@ -14,9 +15,6 @@ const CaseStudies = () => {
     hidden: { opacity: 0, y: 24 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
   };
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedCase, setSelectedCase] = useState(null);
 
   const caseStudies = [
     {
@@ -33,7 +31,8 @@ const CaseStudies = () => {
         'Экспорт в Excel'
       ],
       result: 'Сокращение времени разработки на 80% благодаря вайб-кодингу с Cursor AI',
-      hasDetails: true
+      hasDetails: true,
+      link: '/case-study/financial-calculator'
     },
     {
       id: 2,
@@ -68,13 +67,6 @@ const CaseStudies = () => {
       hasDetails: false
     }
   ];
-
-  const handleViewDetails = (caseStudy) => {
-    if (caseStudy.hasDetails) {
-      setSelectedCase(caseStudy);
-      setIsModalOpen(true);
-    }
-  };
 
   const getStatusClass = (status) => {
     switch (status) {
@@ -139,12 +131,9 @@ const CaseStudies = () => {
 
                 <div className="case-study-actions">
                   {caseStudy.hasDetails ? (
-                    <button 
-                      className="btn-small" 
-                      onClick={() => handleViewDetails(caseStudy)}
-                    >
+                    <Link to={caseStudy.link} className="btn-small">
                       Подробнее
-                    </button>
+                    </Link>
                   ) : (
                     <button className="btn-small btn-outline" disabled>
                       Скоро
@@ -154,57 +143,6 @@ const CaseStudies = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* Modal для подробного описания */}
-          {isModalOpen && selectedCase && (
-            <div className="modal-backdrop" onClick={() => setIsModalOpen(false)}>
-              <div className="modal case-study-modal" onClick={(e) => e.stopPropagation()}>
-                <button 
-                  className="modal-close" 
-                  aria-label="Закрыть" 
-                  onClick={() => setIsModalOpen(false)}
-                >
-                  ×
-                </button>
-                
-                <div className="modal-header">
-                  <div className="modal-icon">{selectedCase.icon}</div>
-                  <h2>{selectedCase.title}</h2>
-                  <span className={`status ${getStatusClass(selectedCase.status)}`}>
-                    {getStatusText(selectedCase.status)}
-                  </span>
-                </div>
-
-                <div className="modal-content">
-                  <h3>Описание проекта</h3>
-                  <p>{selectedCase.description}</p>
-
-                  <h3>Технологии</h3>
-                  <div className="modal-technologies">
-                    {selectedCase.technologies.map((tech, index) => (
-                      <span key={index} className="tech-tag">{tech}</span>
-                    ))}
-                  </div>
-
-                  <h3>Реализованные функции</h3>
-                  <ul>
-                    {selectedCase.features.map((feature, index) => (
-                      <li key={index}>{feature}</li>
-                    ))}
-                  </ul>
-
-                  <h3>Результат</h3>
-                  <p>{selectedCase.result}</p>
-
-                  <div className="modal-actions">
-                    <a href="#case" className="btn-small">
-                      Перейти к полному кейсу
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </motion.div>
       </div>
     </section>
