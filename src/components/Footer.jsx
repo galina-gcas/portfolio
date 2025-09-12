@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,9 +22,11 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="footer-logo">
-              Galina GCAS
-            </div>
+            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div className="footer-logo">
+                Galina GCAS
+              </div>
+            </Link>
             <p className="footer-tagline">Предприниматель, разработчик</p>
           </motion.div>
 

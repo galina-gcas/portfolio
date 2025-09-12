@@ -107,9 +107,7 @@ a::after {
   transition: width 0.3s ease;
 }
 
-a:hover::after {
-  width: 100%;
-}
+/* Убрали подчеркивание по ховеру */
 
 .container {
   max-width: 1200px;
@@ -204,6 +202,27 @@ a:hover::after {
   background-clip: text;
 }
 
+.logo a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: var(--gradient-secondary);
+  transition: width 0.3s ease;
+}
+
+.logo a:hover::after {
+  width: 100%;
+}
+
 nav {
   display: flex;
   justify-content: flex-end;
@@ -250,7 +269,6 @@ nav button:hover {
   border: 1px solid rgba(0, 194, 199, 0.15);
   position: relative;
   overflow: hidden;
-  cursor: pointer;
 }
 
 .feature-card::before {
@@ -263,11 +281,7 @@ nav button:hover {
   background: var(--gradient-accent);
 }
 
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-large);
-  border-color: var(--electric-blue);
-}
+/* Убрали ховер эффекты для feature-card */
 
 .feature-icon {
   font-size: 2.2rem;
@@ -287,9 +301,7 @@ nav button:hover {
   transition: transform 0.3s ease;
 }
 
-.feature-card:hover .feature-accent {
-  transform: scaleX(1);
-}
+/* Убрали ховер эффекты для feature-accent */
 
 /* Компактные заголовки/тексты в Why Vibe Coding */
 .feature-card h3 {
@@ -341,14 +353,7 @@ nav button:hover {
   transition: transform 0.3s ease;
 }
 
-.project-card:hover::before {
-  transform: scaleX(1);
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-large);
-}
+/* Убрали ховер эффекты для project-card */
 
 
 .project-card .content {
@@ -776,10 +781,7 @@ nav button:hover {
   flex-direction: row;
 }
 
-.my-project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px var(--electric-blue);
-}
+/* Убрали ховер эффекты для my-project-card */
 
 .my-project-card::before {
   content: '';
@@ -811,9 +813,7 @@ nav button:hover {
   border-radius: 12px;
 }
 
-.my-project-card:hover .my-project-image-container img {
-  transform: none;
-}
+/* Убрали ховер эффекты для изображения */
 
 .my-project-category {
   position: absolute;
@@ -1432,7 +1432,6 @@ nav button:hover {
 .social-link:hover {
   background: var(--pure-white);
   border-color: var(--electric-blue);
-  transform: translateY(-6px) scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 

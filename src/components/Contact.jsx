@@ -125,8 +125,6 @@ const Contact = () => {
                       className="social-link"
                       style={{ '--link-color': link.color }}
                       whileHover={{ 
-                        scale: 1.1, 
-                        y: -5,
                         boxShadow: `0 10px 20px ${link.color}30`
                       }}
                       whileTap={{ scale: 0.95 }}
