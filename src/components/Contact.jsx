@@ -3,13 +3,25 @@ import { motion } from 'framer-motion';
 
 const Contact = () => {
   const socialLinks = [
-    { icon: '✈️', label: 'Telegram', href: 'https://t.me/galinagcas', color: '#0088cc' },
-    { icon: '🧵', label: 'Threads', href: '#', color: '#000000' }
+    { 
+      icon: '/images/Telegram_2019_Logo.svg', 
+      label: 'Telegram', 
+      href: 'https://t.me/galina_gcas', 
+      color: '#0088cc',
+      isImage: true
+    },
+    { 
+      icon: '/images/Threads_(app)_logo.svg.png', 
+      label: 'Threads', 
+      href: 'https://threads.com/@galina_gcas', 
+      color: '#000000',
+      isImage: true
+    }
   ];
 
   const contactInfo = [
-    { icon: '📧', label: 'Email', value: 'hello@galinagcas.com', href: 'mailto:hello@galinagcas.com' },
-    { icon: '📱', label: 'Telegram', value: '@galinagcas', href: 'https://t.me/galinagcas' },
+    { icon: '📧', label: 'Email', value: 'galina.gcas@gmail.com', href: 'mailto:galina.gcas@gmail.com' },
+    { icon: '📱', label: 'Telegram', value: '@galina_g_cas', href: 'https://t.me/galina_g_cas' },
     { icon: '⏰', label: 'Время ответа', value: 'В течение 24 часов' }
   ];
 
@@ -83,7 +95,7 @@ const Contact = () => {
                       <div className="contact-details">
                         <span className="contact-label">{contact.label}</span>
                         {contact.href ? (
-                          <a href={contact.href} className="contact-value">
+                          <a href={contact.href} className="contact-value" target="_blank" rel="noopener noreferrer">
                             {contact.value}
                           </a>
                         ) : (
@@ -123,7 +135,11 @@ const Contact = () => {
                       transition={{ delay: index * 0.1, duration: 0.5 }}
                       viewport={{ once: true }}
                     >
-                      <span className="social-icon">{link.icon}</span>
+                      {link.isImage ? (
+                        <img src={link.icon} alt={link.label} className="social-icon-img" />
+                      ) : (
+                        <span className="social-icon">{link.icon}</span>
+                      )}
                       <span className="social-label">{link.label}</span>
                     </motion.a>
                   ))}

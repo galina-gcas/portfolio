@@ -13,6 +13,7 @@ import Footer from './components/Footer.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import ScrollToAnchor from './components/ScrollToAnchor.jsx';
 import CaseStudyPage from './pages/CaseStudyPage.jsx';
+import RecipeBotCasePage from './pages/RecipeBotCasePage.jsx';
 import TelegramBotProjectPage from './pages/TelegramBotProjectPage.jsx';
 import AIChatbotProjectPage from './pages/AIChatbotProjectPage.jsx';
 import AnalyticsSystemProjectPage from './pages/AnalyticsSystemProjectPage.jsx';
@@ -42,6 +43,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/case-study/financial-calculator" element={<CaseStudyPage />} />
+          <Route path="/case-study/recipe-bot" element={<RecipeBotCasePage />} />
           <Route path="/project/telegram-bot" element={<TelegramBotProjectPage />} />
           <Route path="/project/ai-chatbot" element={<AIChatbotProjectPage />} />
           <Route path="/project/analytics-system" element={<AnalyticsSystemProjectPage />} />
