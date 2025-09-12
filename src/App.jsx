@@ -4,6 +4,7 @@ import Hero from './components/Hero.jsx';
 import WhyVibeCoding from './components/WhyVibeCoding.jsx';
 import About from './components/About.jsx';
 import Projects from './components/Projects.jsx';
+import CaseStudies from './components/CaseStudies.jsx';
 import CaseStudy from './components/CaseStudy.jsx';
 import Education from './components/Education.jsx';
 import Contact from './components/Contact.jsx';
@@ -17,6 +18,7 @@ function App() {
       <WhyVibeCoding />
       <About />
       <Education />
+      <CaseStudies />
       <Projects />
       <CaseStudy />
       <Contact />

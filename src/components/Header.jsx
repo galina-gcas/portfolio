@@ -8,6 +8,8 @@ const Header = () => {
     { id: 'home', label: 'Главная' },
     { id: 'why', label: 'Почему вайб-кодинг?' },
     { id: 'about', label: 'Кто я' },
+    { id: 'education', label: 'Образование' },
+    { id: 'case-studies', label: 'Кейсы' },
     { id: 'projects', label: 'Проекты' },
     { id: 'contact', label: 'Контакты' }
   ];
