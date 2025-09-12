@@ -984,6 +984,7 @@ nav button:hover {
   .my-project-actions { flex-direction: column; align-items: center; }
   .my-project-content { padding: 2rem; }
   .my-project-content h3 { font-size: 1.5rem; }
+  .process-steps { grid-template-columns: 1fr; }
   .modal { max-width: 95vw; }
   .modal-close { top: 8px; right: 10px; width: 32px; height: 32px; }
   h1 {
@@ -1616,6 +1617,56 @@ nav button:hover {
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.process-step {
+  background: var(--slate-50);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--electric-blue);
+}
+
+.step-number {
+  width: 3rem;
+  height: 3rem;
+  background: var(--gradient-primary);
+  color: var(--pure-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 1rem;
+}
+
+.process-step h3 {
+  color: var(--electric-blue);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.process-step p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--slate-700);
 }
 
 /* Project Page */

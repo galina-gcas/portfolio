@@ -5,25 +5,34 @@ import { Link } from 'react-router-dom';
 const Projects = () => {
   const projects = [
     {
+      id: 'ai-chatbot',
       title: 'ИИ-чат-бот для поддержки клиентов',
       description: 'Автоматизация ответов, интеграция с CRM, обучение на вашей базе знаний.',
       image: 'https://via.placeholder.com/400x200/6366f1/ffffff?text=Chatbot+UI',
       technologies: ['Python', 'OpenAI', 'FastAPI'],
-      category: 'ИИ решения'
+      category: 'ИИ решения',
+      hasDetails: true,
+      link: '/project/ai-chatbot'
     },
     {
+      id: 'analytics-system',
       title: 'Система аналитики продаж',
       description: 'Визуализация данных, прогнозирование, экспорт отчётов и уведомления.',
       image: 'https://via.placeholder.com/400x200/06b6d4/ffffff?text=Analytics+Dashboard',
       technologies: ['React', 'D3.js', 'Node.js'],
-      category: 'Аналитика'
+      category: 'Аналитика',
+      hasDetails: true,
+      link: '/project/analytics-system'
     },
     {
+      id: 'mvp-app',
       title: 'Конверсионное MVP приложение',
       description: 'Быстрая сборка прототипа для тестирования идеи на рынке.',
       image: 'https://via.placeholder.com/400x200/f97316/ffffff?text=MVP+App',
       technologies: ['React', 'Firebase', 'Stripe'],
-      category: 'MVP'
+      category: 'MVP',
+      hasDetails: true,
+      link: '/project/mvp-app'
     }
   ];
 
@@ -143,7 +152,13 @@ const Projects = () => {
                     ))}
                   </div>
                   <div className="project-actions">
-                    <button className="btn-small">Подробнее</button>
+                    {project.hasDetails ? (
+                      <Link to={project.link} className="btn-small">
+                        Подробнее
+                      </Link>
+                    ) : (
+                      <button className="btn-small">Подробнее</button>
+                    )}
                     <button className="btn-small btn-outline">Обсудить</button>
                   </div>
                 </div>

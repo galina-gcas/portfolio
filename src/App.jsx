@@ -14,6 +14,9 @@ import ScrollToTop from './components/ScrollToTop.jsx';
 import ScrollToAnchor from './components/ScrollToAnchor.jsx';
 import CaseStudyPage from './pages/CaseStudyPage.jsx';
 import TelegramBotProjectPage from './pages/TelegramBotProjectPage.jsx';
+import AIChatbotProjectPage from './pages/AIChatbotProjectPage.jsx';
+import AnalyticsSystemProjectPage from './pages/AnalyticsSystemProjectPage.jsx';
+import MVPAppProjectPage from './pages/MVPAppProjectPage.jsx';
 
 function HomePage() {
   return (
@@ -24,7 +27,6 @@ function HomePage() {
       <Education />
       <CaseStudies />
       <Projects />
-      <CaseStudy />
       <Contact />
     </>
   );
@@ -41,6 +43,9 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/case-study/financial-calculator" element={<CaseStudyPage />} />
           <Route path="/project/telegram-bot" element={<TelegramBotProjectPage />} />
+          <Route path="/project/ai-chatbot" element={<AIChatbotProjectPage />} />
+          <Route path="/project/analytics-system" element={<AnalyticsSystemProjectPage />} />
+          <Route path="/project/mvp-app" element={<MVPAppProjectPage />} />
         </Routes>
         <Footer />
       </div>
