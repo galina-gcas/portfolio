@@ -3,10 +3,8 @@ import { motion } from 'framer-motion';
 
 const Contact = () => {
   const socialLinks = [
-    { icon: '📱', label: 'Telegram', href: 'https://t.me/galinagcas', color: '#0088cc' },
-    { icon: '💼', label: 'LinkedIn', href: '#', color: '#0077b5' },
-    { icon: '💻', label: 'GitHub', href: '#', color: '#333' },
-    { icon: '📧', label: 'Email', href: 'mailto:hello@galinagcas.com', color: '#ea4335' }
+    { icon: '✈️', label: 'Telegram', href: 'https://t.me/galinagcas', color: '#0088cc' },
+    { icon: '🧵', label: 'Threads', href: '#', color: '#000000' }
   ];
 
   const contactInfo = [
@@ -60,7 +58,7 @@ const Contact = () => {
           >
             <div className="intro-card">
               <div className="intro-icon">🚀</div>
-              <p>Я открыта к обсуждению ваших задач и проектов. Напишите — и мы вместе создадим решение, которое работает.</p>
+              <p>Я открыта для обсуждения ваших проектов — давайте вместе создадим решение.</p>
             </div>
           </motion.div>
 
@@ -129,11 +127,6 @@ const Contact = () => {
                       <span className="social-label">{link.label}</span>
                     </motion.a>
                   ))}
-                </div>
-                <div className="portfolio-link">
-                  <p>
-                    Также доступен <a href="#" target="_blank" rel="noopener noreferrer">портфолио-документ</a> с деталями проектов и отзывами.
-                  </p>
                 </div>
               </div>
             </motion.div>

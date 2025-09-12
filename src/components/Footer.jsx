@@ -22,9 +22,9 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <div className="footer-logo">
-              Galina <span>GCAS</span>
+              Galina GCAS
             </div>
-            <p className="footer-tagline">Вайб-кодинг для бизнеса</p>
+            <p className="footer-tagline">Предприниматель, разработчик</p>
           </motion.div>
 
           <motion.div
@@ -34,11 +34,9 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <p className="footer-copyright">
-              &copy; {currentYear} Galina GCAS. Все права защищены.
-            </p>
             <p className="footer-description">
-              Создание функциональных MVP с помощью современных ИИ-инструментов
+              Создание функциональных MVP с помощью ИИ.<br />
+              От идеи до реализации — быстро, качественно, эффективно.
             </p>
           </motion.div>
         </div>
@@ -51,9 +49,6 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <div className="footer-divider"></div>
-          <p className="footer-motto">
-            От идеи до реализации — быстро, качественно, эффективно
-          </p>
         </motion.div>
       </div>
     </motion.footer>
