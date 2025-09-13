@@ -46,17 +46,17 @@ const RecipeBotCasePage = () => {
     {
       title: 'Поиск рецептов',
       description: 'Интуитивный поиск по названию, ингредиентам или категориям',
-      image: 'https://via.placeholder.com/600x400/10b981/ffffff?text=Recipe+Search'
+      image: '/images/telegram-bot-main-menu.png'
     },
     {
       title: 'Карточка рецепта',
       description: 'Привлекательное отображение с изображением и описанием',
-      image: 'https://via.placeholder.com/600x400/f59e0b/ffffff?text=Recipe+Card'
+      image: '/images/telegram-bot-news-search.png'
     },
     {
       title: 'Избранное с рейтингами',
       description: 'Персональная библиотека с системой оценок',
-      image: 'https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Favorites+Rating'
+      image: '/images/telegram-bot-post-generation.png'
     }
   ];
 
@@ -96,7 +96,7 @@ const RecipeBotCasePage = () => {
               
               <div className="demo-section">
                 <a href="https://t.me/recipe_base2025_bot" target="_blank" rel="noopener noreferrer" className="demo-btn">
-                  🍳 Попробовать бота
+                  Попробовать бота
                 </a>
               </div>
               
@@ -191,7 +191,7 @@ const RecipeBotCasePage = () => {
               
               <div className="demo-section">
                 <a href="https://t.me/recipe_base2025_bot" target="_blank" rel="noopener noreferrer" className="demo-btn">
-                  🍳 Попробовать бота
+                  Попробовать бота
                 </a>
               </div>
             </div>

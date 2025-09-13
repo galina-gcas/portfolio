@@ -146,7 +146,7 @@ const Projects = memo(() => {
                     ))}
                   </div>
                   <div className="project-actions">
-                    <button className="btn-small btn-outline">Обсудить</button>
+                    <a href="#contact" className="btn-small btn-outline">Обсудить</a>
                   </div>
                 </div>
               </motion.div>
