@@ -24,17 +24,17 @@ const TelegramBotProjectPage = () => {
     {
       title: 'Главное меню бота',
       description: 'Интуитивно понятный интерфейс с основными функциями',
-      image: '/images/telegram-bot-main-menu.png'
+      image: `${import.meta.env.BASE_URL}images/telegram-bot-main-menu.png`
     },
     {
       title: 'Поиск новостей',
       description: 'Результаты поиска с фильтрацией по дате и источнику',
-      image: '/images/telegram-bot-news-search.png'
+      image: `${import.meta.env.BASE_URL}images/telegram-bot-news-search.png`
     },
     {
       title: 'Генерация постов',
       description: 'Автоматическое создание контента для социальных сетей',
-      image: '/images/telegram-bot-post-generation.png'
+      image: `${import.meta.env.BASE_URL}images/telegram-bot-post-generation.png`
     }
   ];
 

@@ -46,17 +46,17 @@ const RecipeBotCasePage = () => {
     {
       title: 'Поиск рецептов',
       description: 'Интуитивный поиск по названию, ингредиентам или категориям',
-      image: '/images/telegram-bot-main-menu.png'
+      image: `${import.meta.env.BASE_URL}images/telegram-bot-main-menu.png`
     },
     {
       title: 'Карточка рецепта',
       description: 'Привлекательное отображение с изображением и описанием',
-      image: '/images/telegram-bot-news-search.png'
+      image: `${import.meta.env.BASE_URL}images/telegram-bot-news-search.png`
     },
     {
       title: 'Избранное с рейтингами',
       description: 'Персональная библиотека с системой оценок',
-      image: '/images/telegram-bot-post-generation.png'
+      image: `${import.meta.env.BASE_URL}images/telegram-bot-post-generation.png`
     }
   ];
 
