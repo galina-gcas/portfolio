@@ -67,7 +67,7 @@ const About = () => {
               variants={itemVariants}
             >
               <div className="photo-card">
-                <img src={`${import.meta.env.BASE_URL}images/profile.jpg`} alt="Galina GCAS" />
+                <img src="/portfolio/images/profile.jpg" alt="Galina GCAS" />
               </div>
             </motion.div>
           </div>

@@ -53,7 +53,7 @@ const AnalyticsSystemProjectPage = () => {
         >
           {/* Breadcrumb */}
           <motion.div className="breadcrumb" variants={itemVariants}>
-            <a href="/">Главная</a> / <a href="/#projects">Проекты</a> / Система аналитики продаж
+            <a href="/portfolio/">Главная</a> / <a href="/portfolio/#projects">Проекты</a> / Система аналитики продаж
           </motion.div>
 
           {/* Project Header */}
@@ -155,10 +155,10 @@ const AnalyticsSystemProjectPage = () => {
             </div>
 
             <div className="project-page-actions">
-              <a href="/#contact" className="btn">
+              <a href="/portfolio/#contact" className="btn">
                 Обсудить проект →
               </a>
-              <a href="/#projects" className="btn btn-secondary">
+              <a href="/portfolio/#projects" className="btn btn-secondary">
                 ← Назад к проектам
               </a>
             </div>
