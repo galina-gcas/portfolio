@@ -21,5 +21,7 @@ export default defineConfig({
     include: ['react', 'react-dom', 'react-router-dom', 'framer-motion']
   },
   publicDir: 'public',
-  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.svg']
+  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.svg'],
+  // Копируем файлы для GitHub Pages
+  copyPublicDir: true
 })
