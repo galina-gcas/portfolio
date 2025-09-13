@@ -95,7 +95,7 @@ const Projects = memo(() => {
             <div className="my-project-card">
               <div className="my-project-image-container">
                 <LazyImage 
-                  src="/images/telegram-bot-climate.png" 
+                  src={`${import.meta.env.BASE_URL}images/telegram-bot-climate.png`} 
                   alt="Telegram-бот для климатических новостей" 
                 />
                 <div className="my-project-category">Мой проект</div>
