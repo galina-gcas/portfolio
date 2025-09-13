@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { profile } from '../assets/images';
 
 const About = () => {
   const skills = [
@@ -67,7 +68,7 @@ const About = () => {
               variants={itemVariants}
             >
               <div className="photo-card">
-                <img src="images/profile.jpg" alt="Galina GCAS" />
+                <img src={profile} alt="Galina GCAS" />
               </div>
             </motion.div>
           </div>
