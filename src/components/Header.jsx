@@ -1,9 +1,10 @@
 import React, { useState, useEffect, memo, useMemo, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = memo(() => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   
   const navItems = useMemo(() => [
@@ -23,20 +24,52 @@ const Header = memo(() => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Закрытие мобильного меню при изменении размера экрана
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Закрытие мобильного меню при клике вне его
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMobileMenuOpen && !event.target.closest('.mobile-nav') && !event.target.closest('.mobile-menu-toggle')) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+      return () => document.removeEventListener('click', handleClickOutside);
+    }
+  }, [isMobileMenuOpen]);
+
   const scrollToSection = useCallback((id) => {
+    // Закрываем мобильное меню при клике
+    setIsMobileMenuOpen(false);
+    
     if (location.pathname !== '/') {
       // Если мы не на главной странице, переходим на главную и затем скроллим
       window.location.href = `/#${id}`;
     } else {
-      const element = document.getElementById(id);
-      if (element) {
-        const headerHeight = 80; // Высота хедера
-        const elementPosition = element.offsetTop - headerHeight;
-        window.scrollTo({
-          top: elementPosition,
-          behavior: 'smooth'
-        });
-      }
+      // Небольшая задержка для закрытия меню перед скроллом
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const headerHeight = window.innerWidth <= 768 ? 60 : 80; // Адаптивная высота хедера
+          const elementPosition = element.offsetTop - headerHeight;
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
     }
   }, [location.pathname]);
 
@@ -45,6 +78,10 @@ const Header = memo(() => {
       scrollToSection(item.id);
     }
   }, [scrollToSection]);
+
+  const toggleMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(prev => !prev);
+  }, []);
 
   return (
     <motion.header 
@@ -63,7 +100,9 @@ const Header = memo(() => {
             Galina GCAS
           </Link>
         </motion.div>
-        <nav>
+        
+        {/* Desktop Navigation */}
+        <nav className="desktop-nav">
           <ul>
             {navItems.map((item, index) => (
               <motion.li 
@@ -81,6 +120,59 @@ const Header = memo(() => {
             ))}
           </ul>
         </nav>
+
+        {/* Mobile Burger Button */}
+        <motion.button
+          className="mobile-menu-toggle"
+          onClick={toggleMobileMenu}
+          whileTap={{ scale: 0.95 }}
+          aria-label="Toggle mobile menu"
+        >
+          <motion.span
+            className={`burger-line ${isMobileMenuOpen ? 'open' : ''}`}
+            animate={{ rotate: isMobileMenuOpen ? 45 : 0, y: isMobileMenuOpen ? 0 : -8 }}
+            transition={{ duration: 0.3 }}
+          />
+          <motion.span
+            className={`burger-line ${isMobileMenuOpen ? 'open' : ''}`}
+            animate={{ opacity: isMobileMenuOpen ? 0 : 1 }}
+            transition={{ duration: 0.3 }}
+          />
+          <motion.span
+            className={`burger-line ${isMobileMenuOpen ? 'open' : ''}`}
+            animate={{ rotate: isMobileMenuOpen ? -45 : 0, y: isMobileMenuOpen ? 0 : 8 }}
+            transition={{ duration: 0.3 }}
+          />
+        </motion.button>
+
+        {/* Mobile Navigation */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.nav
+              className="mobile-nav"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <ul>
+                {navItems.map((item, index) => (
+                  <motion.li 
+                    key={item.id}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <button onClick={() => handleNavClick(item)}>
+                      {item.label}
+                    </button>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.nav>
+          )}
+        </AnimatePresence>
       </div>
     </motion.header>
   );
