@@ -6,7 +6,7 @@ const ScrollToAnchor = () => {
 
   useEffect(() => {
     // Работаем только на главной странице
-    if (pathname === '/' && hash) {
+    if ((pathname === '/portfolio' || pathname === '/') && hash) {
       // Небольшая задержка для того, чтобы страница успела загрузиться
       setTimeout(() => {
         const element = document.querySelector(hash);
