@@ -13,6 +13,7 @@ import Footer from './components/Footer.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import ScrollToTopButton from './components/ScrollToTopButton.jsx';
 import ScrollToAnchor from './components/ScrollToAnchor.jsx';
+import NotFound from './components/NotFound.jsx';
 
 // Lazy load pages for better performance
 const CaseStudyPage = lazy(() => import('./pages/CaseStudyPage.jsx'));
@@ -75,6 +76,7 @@ function App() {
             <Route path="/project/ai-chatbot" element={<AIChatbotProjectPage />} />
             <Route path="/project/analytics-system" element={<AnalyticsSystemProjectPage />} />
             <Route path="/project/mvp-app" element={<MVPAppProjectPage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
         <Footer />
