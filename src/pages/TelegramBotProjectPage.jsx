@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { telegramBotMainMenu, telegramBotNewsSearch, telegramBotPostGeneration } from '../assets/images';
 
 const TelegramBotProjectPage = () => {
   const containerVariants = {
@@ -24,17 +25,17 @@ const TelegramBotProjectPage = () => {
     {
       title: 'Главное меню бота',
       description: 'Интуитивно понятный интерфейс с основными функциями',
-      image: 'images/telegram-bot-main-menu.png'
+      image: telegramBotMainMenu
     },
     {
       title: 'Поиск новостей',
       description: 'Результаты поиска с фильтрацией по дате и источнику',
-      image: 'images/telegram-bot-news-search.png'
+      image: telegramBotNewsSearch
     },
     {
       title: 'Генерация постов',
       description: 'Автоматическое создание контента для социальных сетей',
-      image: 'images/telegram-bot-post-generation.png'
+      image: telegramBotPostGeneration
     }
   ];
 

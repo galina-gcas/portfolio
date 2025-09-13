@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { diploma } from '../assets/images';
 
 const Education = () => {
   const containerVariants = {
@@ -16,7 +17,7 @@ const Education = () => {
   };
 
   const [isOpen, setIsOpen] = useState(false);
-  const certSrc = 'images/diploma-rn.png';
+  const certSrc = diploma;
 
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') setIsOpen(false); };
