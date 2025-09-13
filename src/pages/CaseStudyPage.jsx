@@ -66,7 +66,7 @@ const CaseStudyPage = () => {
                 
                 <div className="demo-section">
                   <a href="https://galinagcas.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" className="demo-btn">
-                    🧮 Попробовать калькулятор
+                    Попробовать калькулятор
                   </a>
                 </div>
                 
@@ -115,7 +115,7 @@ const CaseStudyPage = () => {
               
               <div className="demo-section">
                 <a href="https://galinagcas.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" className="demo-btn">
-                  🧮 Попробовать калькулятор
+                  Попробовать калькулятор
                 </a>
               </div>
             </div>
