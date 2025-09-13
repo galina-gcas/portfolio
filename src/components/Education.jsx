@@ -16,7 +16,7 @@ const Education = () => {
   };
 
   const [isOpen, setIsOpen] = useState(false);
-  const certSrc = '/portfolio/images/diploma-rn.png';
+  const certSrc = 'images/diploma-rn.png';
 
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') setIsOpen(false); };
