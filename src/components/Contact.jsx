@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 const Contact = () => {
   const socialLinks = [
     { 
-      icon: `${import.meta.env.BASE_URL}images/Telegram_2019_Logo.svg`, 
+      icon: '/portfolio/images/Telegram_2019_Logo.svg', 
       label: 'Telegram', 
       href: 'https://t.me/galina_gcas', 
       color: '#0088cc',
       isImage: true
     },
     { 
-      icon: `${import.meta.env.BASE_URL}images/Threads_(app)_logo.svg.png`, 
+      icon: '/portfolio/images/Threads_(app)_logo.svg.png', 
       label: 'Threads', 
       href: 'https://threads.com/@galina_gcas', 
       color: '#000000',

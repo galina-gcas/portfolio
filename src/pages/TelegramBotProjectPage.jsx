@@ -24,17 +24,17 @@ const TelegramBotProjectPage = () => {
     {
       title: 'Главное меню бота',
       description: 'Интуитивно понятный интерфейс с основными функциями',
-      image: `${import.meta.env.BASE_URL}images/telegram-bot-main-menu.png`
+      image: '/portfolio/images/telegram-bot-main-menu.png'
     },
     {
       title: 'Поиск новостей',
       description: 'Результаты поиска с фильтрацией по дате и источнику',
-      image: `${import.meta.env.BASE_URL}images/telegram-bot-news-search.png`
+      image: '/portfolio/images/telegram-bot-news-search.png'
     },
     {
       title: 'Генерация постов',
       description: 'Автоматическое создание контента для социальных сетей',
-      image: `${import.meta.env.BASE_URL}images/telegram-bot-post-generation.png`
+      image: '/portfolio/images/telegram-bot-post-generation.png'
     }
   ];
 
@@ -49,7 +49,7 @@ const TelegramBotProjectPage = () => {
         >
           {/* Breadcrumb */}
           <motion.div className="breadcrumb" variants={itemVariants}>
-            <a href="/">Главная</a> / <a href="/#projects">Проекты</a> / Telegram-бот для климатических новостей
+            <a href="/portfolio/">Главная</a> / <a href="/portfolio/#projects">Проекты</a> / Telegram-бот для климатических новостей
           </motion.div>
 
           {/* Project Header */}
@@ -140,7 +140,7 @@ const TelegramBotProjectPage = () => {
             </div>
 
             <div className="project-page-actions">
-              <a href="/#projects" className="btn btn-secondary">
+              <a href="/portfolio/#projects" className="btn btn-secondary">
                 ← Назад к проектам
               </a>
             </div>

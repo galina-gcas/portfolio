@@ -53,7 +53,7 @@ const AIChatbotProjectPage = () => {
         >
           {/* Breadcrumb */}
           <motion.div className="breadcrumb" variants={itemVariants}>
-            <a href="/">Главная</a> / <a href="/#projects">Проекты</a> / ИИ-чат-бот для поддержки клиентов
+            <a href="/portfolio/">Главная</a> / <a href="/portfolio/#projects">Проекты</a> / ИИ-чат-бот для поддержки клиентов
           </motion.div>
 
           {/* Project Header */}
@@ -155,10 +155,10 @@ const AIChatbotProjectPage = () => {
             </div>
 
             <div className="project-page-actions">
-              <a href="/#contact" className="btn">
+              <a href="/portfolio/#contact" className="btn">
                 Обсудить проект →
               </a>
-              <a href="/#projects" className="btn btn-secondary">
+              <a href="/portfolio/#projects" className="btn btn-secondary">
                 ← Назад к проектам
               </a>
             </div>

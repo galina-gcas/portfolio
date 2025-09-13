@@ -147,10 +147,10 @@ const CaseStudyPage = () => {
               </div>
 
               <div className="case-page-actions">
-                <a href="/#case-studies" className="btn-small btn-outline">
+                <a href="/portfolio/#case-studies" className="btn-small btn-outline">
                   ← Назад к кейсам
                 </a>
-                <a href="/#projects" className="btn-small">
+                <a href="/portfolio/#projects" className="btn-small">
                   Смотреть проекты →
                 </a>
               </div>
