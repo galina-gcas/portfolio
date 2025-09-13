@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/portfolio-1/', // Замените 'portfolio-1' на название вашего репозитория
+  base: '/portfolio/', // Правильный путь для вашего репозитория
   build: {
     outDir: 'dist',
     rollupOptions: {
