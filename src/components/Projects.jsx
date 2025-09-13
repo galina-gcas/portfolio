@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { memo, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import LazyImage from './LazyImage.jsx';
 
-const Projects = () => {
-  const projects = [
+const Projects = memo(() => {
+  const projects = useMemo(() => [
     {
       id: 'ai-chatbot',
       title: 'ИИ-чат-бот для поддержки клиентов',
@@ -34,9 +35,9 @@ const Projects = () => {
       hasDetails: true,
       link: '/project/mvp-app'
     }
-  ];
+  ], []);
 
-  const containerVariants = {
+  const containerVariants = useMemo(() => ({
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -45,9 +46,9 @@ const Projects = () => {
         delayChildren: 0.3
       }
     }
-  };
+  }), []);
 
-  const cardVariants = {
+  const cardVariants = useMemo(() => ({
     hidden: { opacity: 0, y: 50, scale: 0.9 },
     visible: {
       opacity: 1,
@@ -58,7 +59,7 @@ const Projects = () => {
         ease: "easeOut"
       }
     }
-  };
+  }), []);
 
   return (
     <section id="projects" className="section">
@@ -93,7 +94,10 @@ const Projects = () => {
           >
             <div className="my-project-card">
               <div className="my-project-image-container">
-                <img src="/images/telegram-bot-climate.png" alt="Telegram-бот для климатических новостей" />
+                <LazyImage 
+                  src="/images/telegram-bot-climate.png" 
+                  alt="Telegram-бот для климатических новостей" 
+                />
                 <div className="my-project-category">Мой проект</div>
               </div>
               <div className="my-project-content">
@@ -152,6 +156,8 @@ const Projects = () => {
       </div>
     </section>
   );
-};
+});
+
+Projects.displayName = 'Projects';
 
 export default Projects;
