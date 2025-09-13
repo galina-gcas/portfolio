@@ -56,7 +56,7 @@ const Header = memo(() => {
     
     if (location.pathname !== '/') {
       // Если мы не на главной странице, переходим на главную и затем скроллим
-      window.location.href = `/#${id}`;
+      window.location.href = `${import.meta.env.BASE_URL}#${id}`;
     } else {
       // Небольшая задержка для закрытия меню перед скроллом
       setTimeout(() => {
