@@ -61,7 +61,7 @@ const LoadingSpinner = () => (
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <ScrollToTop />
       <ScrollToAnchor />
       <div className="App">
