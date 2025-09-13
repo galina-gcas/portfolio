@@ -1017,6 +1017,36 @@ nav button:hover {
   transform: translateY(-2px);
 }
 
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  color: var(--pure-white);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-medium);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background: var(--gradient-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-large);
+}
+
+.scroll-to-top:active {
+  transform: translateY(0);
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .education-grid { grid-template-columns: 1fr; }
@@ -1079,7 +1109,12 @@ nav button:hover {
   .business-applications { grid-template-columns: 1fr; }
   .business-app { padding: 1.5rem; }
   .modal { max-width: 95vw; }
-  .modal-close { top: 8px; right: 10px; width: 32px; height: 32px; }
+  .scroll-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+  }
   h1 {
     font-size: 2.8rem;
   }
@@ -1202,6 +1237,11 @@ nav button:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes float {

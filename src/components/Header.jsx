@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 
-const Header = () => {
+const Header = memo(() => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   
-  const navItems = [
+  const navItems = useMemo(() => [
     { id: 'why', label: 'Почему вайб-кодинг?', path: '/#why' },
     { id: 'about', label: 'Кто я', path: '/#about' },
     { id: 'education', label: 'Дипломы и сертификаты', path: '/#education' },
     { id: 'projects', label: 'Проекты', path: '/#projects' },
     { id: 'contact', label: 'Контакты', path: '/#contact' }
-  ];
+  ], []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +23,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
+  const scrollToSection = useCallback((id) => {
     if (location.pathname !== '/') {
       // Если мы не на главной странице, переходим на главную и затем скроллим
       window.location.href = `/#${id}`;
@@ -38,13 +38,13 @@ const Header = () => {
         });
       }
     }
-  };
+  }, [location.pathname]);
 
-  const handleNavClick = (item) => {
+  const handleNavClick = useCallback((item) => {
     if (item.path.startsWith('/#')) {
       scrollToSection(item.id);
     }
-  };
+  }, [scrollToSection]);
 
   return (
     <motion.header 
@@ -84,6 +84,8 @@ const Header = () => {
       </div>
     </motion.header>
   );
-};
+});
+
+Header.displayName = 'Header';
 
 export default Header;

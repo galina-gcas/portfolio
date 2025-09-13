@@ -1,22 +1,9 @@
-import React from 'react';
+import React, { memo, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const CaseStudies = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.2 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 24 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
-  };
-
-  const caseStudies = [
+const CaseStudies = memo(() => {
+  const caseStudies = useMemo(() => [
     {
       id: 1,
       icon: '💰',
@@ -34,23 +21,23 @@ const CaseStudies = () => {
       hasDetails: true,
       link: '/case-study/financial-calculator'
     },
-                {
-                  id: 2,
-                  icon: '🍳',
-                  title: 'Telegram-бот для поиска рецептов',
-                  status: 'completed',
-                  description: 'Цифровой продукт для поиска рецептов с функцией избранного и рейтингом — вовлечение и удержание пользователей.',
-                  technologies: ['Python', 'Telegram API', 'SQLite', 'TheMealDB API'],
-                  features: [
-                    'Разнообразный поиск',
-                    'Карточки с изображениями',
-                    'Избранное с рейтингом',
-                    'Видео с YouTube'
-                  ],
-                  result: 'Создание долгосрочной точки взаимодействия с клиентом',
-                  hasDetails: true,
-                  link: '/case-study/recipe-bot'
-                },
+    {
+      id: 2,
+      icon: '🍳',
+      title: 'Telegram-бот для поиска рецептов',
+      status: 'completed',
+      description: 'Цифровой продукт для поиска рецептов с функцией избранного и рейтингом — вовлечение и удержание пользователей.',
+      technologies: ['Python', 'Telegram API', 'SQLite', 'TheMealDB API'],
+      features: [
+        'Разнообразный поиск',
+        'Карточки с изображениями',
+        'Избранное с рейтингом',
+        'Видео с YouTube'
+      ],
+      result: 'Создание долгосрочной точки взаимодействия с клиентом',
+      hasDetails: true,
+      link: '/case-study/recipe-bot'
+    },
     {
       id: 3,
       icon: '📊',
@@ -67,25 +54,38 @@ const CaseStudies = () => {
       result: 'Визулизация данных с автоматизированным поиском и выгрузкой отчётов',
       hasDetails: false
     }
-  ];
+  ], []);
 
-  const getStatusClass = (status) => {
+  const containerVariants = useMemo(() => ({
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.2 }
+    }
+  }), []);
+
+  const itemVariants = useMemo(() => ({
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+  }), []);
+
+  const getStatusClass = useMemo(() => (status) => {
     switch (status) {
       case 'completed': return 'completed';
       case 'in-progress': return 'in-progress';
       case 'planned': return 'planned';
       default: return 'planned';
     }
-  };
+  }, []);
 
-  const getStatusText = (status) => {
+  const getStatusText = useMemo(() => (status) => {
     switch (status) {
       case 'completed': return 'Завершён';
       case 'in-progress': return 'В процессе';
       case 'planned': return 'Запланирован';
       default: return 'Запланирован';
     }
-  };
+  }, []);
 
   return (
     <section id="case-studies" className="section">
@@ -154,6 +154,8 @@ const CaseStudies = () => {
       </div>
     </section>
   );
-};
+});
+
+CaseStudies.displayName = 'CaseStudies';
 
 export default CaseStudies;
