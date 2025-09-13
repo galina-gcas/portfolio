@@ -2,6 +2,7 @@ import React, { memo, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import LazyImage from './LazyImage.jsx';
+import { telegramBotClimate } from '../assets/images';
 
 const Projects = memo(() => {
   const projects = useMemo(() => [
@@ -95,7 +96,7 @@ const Projects = memo(() => {
             <div className="my-project-card">
               <div className="my-project-image-container">
                 <LazyImage 
-                  src="images/telegram-bot-climate.png" 
+                  src={telegramBotClimate} 
                   alt="Telegram-бот для климатических новостей" 
                 />
                 <div className="my-project-category">Мой проект</div>

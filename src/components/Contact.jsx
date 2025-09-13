@@ -1,17 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { telegramLogo, threadsLogo } from '../assets/images';
 
 const Contact = () => {
   const socialLinks = [
     { 
-      icon: 'images/Telegram_2019_Logo.svg', 
+      icon: telegramLogo, 
       label: 'Telegram', 
       href: 'https://t.me/galina_gcas', 
       color: '#0088cc',
       isImage: true
     },
     { 
-      icon: 'images/Threads_(app)_logo.svg.png', 
+      icon: threadsLogo, 
       label: 'Threads', 
       href: 'https://threads.com/@galina_gcas', 
       color: '#000000',
