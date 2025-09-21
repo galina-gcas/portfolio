@@ -21,6 +21,7 @@ const RecipeBotCasePage = lazy(() => import('./pages/RecipeBotCasePage.jsx'));
 const TelegramBotProjectPage = lazy(() => import('./pages/TelegramBotProjectPage.jsx'));
 const AIChatbotProjectPage = lazy(() => import('./pages/AIChatbotProjectPage.jsx'));
 const AnalyticsSystemProjectPage = lazy(() => import('./pages/AnalyticsSystemProjectPage.jsx'));
+const AnalyticsServiceCasePage = lazy(() => import('./pages/AnalyticsServiceCasePage.jsx'));
 const MVPAppProjectPage = lazy(() => import('./pages/MVPAppProjectPage.jsx'));
 
 function HomePage() {
@@ -72,6 +73,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/case-study/financial-calculator" element={<CaseStudyPage />} />
             <Route path="/case-study/recipe-bot" element={<RecipeBotCasePage />} />
+            <Route path="/case-study/analytics-service" element={<AnalyticsServiceCasePage />} />
             <Route path="/project/telegram-bot" element={<TelegramBotProjectPage />} />
             <Route path="/project/ai-chatbot" element={<AIChatbotProjectPage />} />
             <Route path="/project/analytics-system" element={<AnalyticsSystemProjectPage />} />
