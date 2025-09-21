@@ -25,41 +25,6 @@ const AnalyticsServiceCasePage = () => {
     'Функция экспорта полного отчёта (таблица + анализ от нейросетей) в PDF — готовый документ для презентации или архива.'
   ];
 
-  const businessApplications = [
-    {
-      category: 'Финансовая аналитика',
-      examples: ['Анализ расходов', 'Отчёты по продажам', 'Бюджетирование'],
-      description: 'Быстрый анализ финансовых данных с выявлением трендов и аномалий'
-    },
-    {
-      category: 'Маркетинговая аналитика',
-      examples: ['Анализ рекламных кампаний', 'Конверсионная воронка', 'ROI по каналам'],
-      description: 'Автоматическое выявление эффективных каналов и перерасхода бюджета'
-    },
-    {
-      category: 'Операционная аналитика',
-      examples: ['Анализ производительности', 'Логи операций', 'KPI дашборды'],
-      description: 'Мониторинг ключевых показателей с AI-инсайтами'
-    }
-  ];
-
-  const screenshots = [
-    {
-      title: 'Загрузка и просмотр данных',
-      description: 'Интерфейс для загрузки файлов и красивая таблица с первыми 100 строками',
-      image: 'https://via.placeholder.com/600x400/1e3a8a/ffffff?text=Data+Upload+View'
-    },
-    {
-      title: 'Автоматическая аналитика',
-      description: 'Статистика по числовым столбцам и количество уникальных значений',
-      image: 'https://via.placeholder.com/600x400/06b6d4/ffffff?text=Auto+Analytics'
-    },
-    {
-      title: 'AI-анализ от нейросети',
-      description: 'Экспертное заключение с выявлением трендов, аномалий и сезонности',
-      image: 'https://via.placeholder.com/600x400/8b5cf6/ffffff?text=AI+Analysis'
-    }
-  ];
 
   return (
     <div className="case-study-page">
@@ -81,6 +46,7 @@ const AnalyticsServiceCasePage = () => {
             <h1>Веб-сервис аналитики с помощью LLM</h1>
             <p className="case-page-subtitle">Как AI превращает сырые данные в бизнес-инсайты за минуты</p>
             <div className="case-page-meta">
+              <span className="status completed">Завершён</span>
             </div>
           </motion.div>
 
@@ -102,85 +68,72 @@ const AnalyticsServiceCasePage = () => {
                 ))}
               </ul>
 
-            </div>
-
-            <div className="case-page-section">
-              <h2>Применение в бизнесе</h2>
-              <div className="business-applications">
-                {businessApplications.map((app, index) => (
-                  <div key={index} className="business-application">
-                    <h3>{app.category}</h3>
-                    <p className="business-description">{app.description}</p>
-                    <div className="business-examples">
-                      <strong>Примеры:</strong> {app.examples.join(', ')}
-                    </div>
-                  </div>
-                ))}
+              <div className="demo-section">
+                <a href="https://project3-analytics.onrender.com/" target="_blank" rel="noopener noreferrer" className="demo-btn">
+                  Попробовать сервис
+                </a>
               </div>
+
             </div>
 
             <div className="case-page-section">
-              <h2>Технические особенности</h2>
-              <div className="tech-features">
-                <div className="tech-feature">
-                  <h3>🛠️ Вайб-кодинг подход</h3>
-                  <p>Использование Cursor AI с передовыми LLM-моделями позволило ускорить разработку в разы по сравнению с традиционным подходом.</p>
-                </div>
-                <div className="tech-feature">
-                  <h3>🔧 Модульная архитектура</h3>
-                  <p>Отдельные модули для работы с YandexGPT и GigaChat, обработки PDF, генерации отчётов. Это обеспечивает лёгкость расширения и поддержки.</p>
-                </div>
-                <div className="tech-feature">
-                  <h3>🚀 Готовность к масштабированию</h3>
-                  <p>Проект развернут на Render с автоматическим деплоем. Включены все необходимые конфигурационные файлы и инструкции по развёртыванию.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="case-page-section">
-              <h2>Интерфейс и возможности</h2>
-              <div className="screenshots-grid">
-                {screenshots.map((screenshot, index) => (
-                  <div key={index} className="screenshot-item">
-                    <img src={screenshot.image} alt={screenshot.title} />
-                    <h3>{screenshot.title}</h3>
-                    <p>{screenshot.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="case-page-section">
-              <h2>Результат и эффект</h2>
-              <p>Инструмент позволяет предпринимателю, например, загрузить выписку по расходам, отчёт по продажам или логи рекламы — и мгновенно получить не только график, но и текстовое объяснение: <em>"В феврале наблюдается пик расходов при снижении конверсии — возможно, перерасход бюджета на неэффективные каналы"</em>.</p>
-              
-              <p>Благодаря вайб-кодингу и генеративному ИИ (Cursor AI + LLM), приложение было разработано с минимальными затратами на тестирование и рефакторинг. Код остался модульным и легко расширяемым. Сегодня это готовая основа для SaaS-решения в нише бизнес-аналитики для малого бизнеса.</p>
-
-              <div className="results-highlight">
-                <div className="result-item">
-                  <div className="result-icon">⚡</div>
-                  <div className="result-content">
-                    <h3>Скорость разработки</h3>
-                    <p>Быстрая разработка с минимальными затратами на тестирование</p>
+              <h2>Технологии</h2>
+              <div className="technologies-grid">
+                <div className="tech-category">
+                  <h3>Backend</h3>
+                  <div className="tech-tags">
+                    <span className="tech-tag">Python</span>
+                    <span className="tech-tag">Pandas</span>
+                    <span className="tech-tag">openpyxl</span>
                   </div>
                 </div>
-                <div className="result-item">
-                  <div className="result-icon">🤖</div>
-                  <div className="result-content">
-                    <h3>AI-анализ</h3>
-                    <p>Автоматическое выявление трендов, аномалий и сезонности в данных</p>
+                <div className="tech-category">
+                  <h3>Визуализация</h3>
+                  <div className="tech-tags">
+                    <span className="tech-tag">Plotly</span>
+                    <span className="tech-tag">Matplotlib</span>
                   </div>
                 </div>
-                <div className="result-item">
-                  <div className="result-icon">📋</div>
-                  <div className="result-content">
-                    <h3>Готовые отчёты</h3>
-                    <p>Экспорт полного анализа в PDF для презентаций и архива</p>
+                <div className="tech-category">
+                  <h3>AI-интеграция</h3>
+                  <div className="tech-tags">
+                    <span className="tech-tag">YandexGPT</span>
+                    <span className="tech-tag">GigaChat</span>
                   </div>
                 </div>
               </div>
             </div>
 
+
+            <div className="case-page-section">
+              <h2>Результат разработки</h2>
+              <p>Инструмент стал практическим решением для быстрого анализа бизнес-данных с AI-инсайтами.</p>
+              <p>Реализация через вайб-кодинг с использованием Cursor AI позволила создать полнофункциональное приложение с минимальными затратами на тестирование и рефакторинг, сохранив высокое качество и читаемость кода.</p>
+              <p>Проект продемонстрировал применимость LLM в создании бизнес-ориентированных решений — от идеи до рабочего прототипа за короткое время.</p>
+              <p>Инструмент разработан в рамках курса «Вайб-кодинг и автономные агенты» и представляет готовую основу для SaaS-решения в нише бизнес-аналитики для малого бизнеса.</p>
+            </div>
+
+            <div className="case-page-section">
+              <h2>Ключевые особенности</h2>
+              <div className="features-grid">
+                <div className="feature-item">
+                  <div className="feature-icon">📊</div>
+                  <h3>Умная визуализация</h3>
+                  <p>Автоматическое построение релевантных диаграмм на основе типов данных</p>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-icon">🤖</div>
+                  <h3>AI-анализ</h3>
+                  <p>Интеграция с YandexGPT и GigaChat для генерации экспертных заключений</p>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-icon">📋</div>
+                  <h3>Готовые отчёты</h3>
+                  <p>Экспорт полного анализа в PDF для презентаций и архива</p>
+                </div>
+               
+              </div>
+            </div>
             <div className="case-page-actions">
               <a href="/portfolio/#contact" className="btn">
                 Обсудить проект →

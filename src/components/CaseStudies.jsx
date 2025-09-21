@@ -41,7 +41,7 @@ const CaseStudies = memo(() => {
     {
       id: 3,
       icon: '📊',
-      title: 'Веб-сервис аналитики данных с LLM',
+      title: 'Веб-сервис аналитики с помощью LLM',
       status: 'completed',
       description: 'Инструмент для быстрого анализа табличных данных из Excel и PDF-файлов с интеграцией LLM-моделей GigaChat и YandexGPT.',
       technologies: ['Python', 'Pandas', 'YandexGPT', 'GigaChat'],
