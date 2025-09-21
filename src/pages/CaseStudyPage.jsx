@@ -34,7 +34,7 @@ const CaseStudyPage = () => {
         >
             {/* Breadcrumb */}
             <motion.div className="breadcrumb" variants={itemVariants}>
-              <a href="/">Главная</a> / <a href="/#case-studies">Учебные кейсы</a> / Финансовый калькулятор
+              <a href="/portfolio/">Главная</a> / <a href="/portfolio/#case-studies">Учебные кейсы</a> / Финансовый калькулятор
             </motion.div>
 
             {/* Case Header */}

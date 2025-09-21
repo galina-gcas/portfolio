@@ -41,18 +41,18 @@ const CaseStudies = memo(() => {
     {
       id: 3,
       icon: '📊',
-      title: 'Дэшборд аналитики (новости и климат)',
-      status: 'planned',
-      description: 'Интерактивная панель для визуализации ключевых событий с регулярным обновлением и отрисовкой динамики.',
-      technologies: ['React', 'D3.js', 'Node.js', 'MongoDB'],
+      title: 'Веб-сервис аналитики с помощью LLM',
+      status: 'completed',
+      description: 'Инструмент для быстрого анализа табличных данных из Excel и PDF-файлов с интеграцией LLM-моделей GigaChat и YandexGPT.',
+      technologies: ['Python', 'Pandas', 'YandexGPT', 'GigaChat'],
       features: [
-        'Интерактивные графики',
-        'Запланирванные обновления',
-        'Кастомные виджеты',
-        'Экспорт отчётов'
+        'Поддержка Excel, CSV и PDF',
+        'Автоматическая визуализация данных',
+        'Экспорт отчётов в PDF'
       ],
-      result: 'Визулизация данных с автоматизированным поиском и выгрузкой отчётов',
-      hasDetails: false
+      result: 'Автоматическое выявление трендов и аномалий в данныx',
+      hasDetails: true,
+      link: '/case-study/analytics-service'
     }
   ], []);
 

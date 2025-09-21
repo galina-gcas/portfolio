@@ -72,7 +72,7 @@ const RecipeBotCasePage = () => {
         >
           {/* Breadcrumb */}
           <motion.div className="breadcrumb" variants={itemVariants}>
-            <a href="/">Главная</a> / <a href="/#case-studies">Учебные кейсы</a> / Telegram-бот для поиска рецептов
+            <a href="/portfolio/">Главная</a> / <a href="/portfolio/#case-studies">Учебные кейсы</a> / Telegram-бот для поиска рецептов
           </motion.div>
 
           {/* Header Section */}
